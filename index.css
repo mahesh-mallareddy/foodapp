@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background: #3500b1ae;
+
+}
+
+.navbar>h2 {
+    padding: 20px 45px;
+    color: white;
+
+}
+
+.navbar>.menubtn {
+    padding: 20px 45px;
+    display: none;
+}
+
+.navbar>.menubtn>h2 {
+    color: white;
+    cursor: pointer;
+}
+
+.navbar .navlist ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar .navlist ul li {
+    padding: 22px 15px;
+    color: rgb(23, 18, 18);
+}
+
+.navbar .navlist {
+    position: relative;
+}
+
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.foodcards {
+    max-width: fit-content;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px;
+}
+
+.foodcards img {
+    width: 360px;
+    border-radius: 10px;
+}
+
+.foodcards .foodsinfo {
+    padding: 10px 15px;
+}
+
+.foodcards .foodsinfo p {
+    gap: 45%;
+    display: flex;
+    padding-top: 10px;
+}
+
+.foodcards .foodsinfo input {
+    padding: 0.6rem 1.5rem;
+    margin: 10px;
+    background-color: rgba(78, 44, 113, 0.852);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: 200ms ease-in;
+}
+
+.foodcards .foodsinfo input:hover {
+    background-color: rgba(107, 32, 178, 0.806);
+}
+
+.sreachinput{
+    max-width: fit-content;
+margin: 0.8em auto;
+}
+.sreachinput input{
+    padding: 0.7em 4em;
+    border-radius:10px  ;
+    border: solid gray 1px;
+    outline: none;
+    font-size: 18px;
+  }
+  .sreachinput button{
+    padding: 0.61em 2.7em;
+margin: 0 20px;
+background-color: rgba(78, 44, 113, 0.852);
+color: white;
+border-radius: 10px;
+border: none;
+cursor: pointer;
+  }
+  
+
+@media (max-width:800px) {
+    .navbar .navlist {
+        background-color: #bf7dfd;
+        position: absolute;
+        top: 4.2em;
+        left: 0em;
+        width: 100%;
+        overflow: hidden;
+        transform: translateY(0.1);
+        display: none;
+    }
+
+    .navbar .navlist.mobileactive {
+        transition: all 1000ms;
+        display: block;
+    }
+
+    .navbar .navlist ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar .navlist ul li {
+        padding: 12px 15px;
+        color: rgb(23, 18, 18);
+    }
+
+    .navbar>.menubtn {
+        display: block;
+    }
+}
