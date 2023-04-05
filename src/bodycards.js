@@ -32,7 +32,6 @@ const [allrestaurant,setallrestaurant] = useState([])
     let data = await fetchapi.json()
     setfilterrestaurant(data?.data?.cards[2]?.data?.data?.cards)
     setallrestaurant(data?.data?.cards[2]?.data?.data?.cards)
-    // const getinfo = data?.data?.cards[2].data.data.cards
   };
 
   useEffect(() => {
