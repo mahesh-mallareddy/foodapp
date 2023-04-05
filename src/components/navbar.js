@@ -16,13 +16,15 @@ export let Logo = () => (
             <Link to="/">
             <li>HOME</li>
             </Link>
+            <Link to="/order">
+            <li>ORDER</li>
+            </Link>
             <Link to="/about">
             <li>ABOUT</li>
             </Link>
             <Link to="/contact">
             <li>CONTACT</li>
             </Link>
-            <li>ORDER</li>
           </ul>
         </div>
         <div className='menubtn'>

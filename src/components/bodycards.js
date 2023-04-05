@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-
+import { IMG_CDN } from "../constants";
 
 export function Bodycards({ cloudinaryImageId, name, costForTwoString, slaString, area }) {
 
   return (
     <div className="foodcards">
-      <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId} alt="image" />
+      <img src={IMG_CDN + cloudinaryImageId} alt="image" />
       <div className="foodsinfo">
         <h4>{name}</h4>
         <p>{costForTwoString}<span>{"Delivary time: " + slaString}</span></p>
