@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 export let Logo = () => (
     <h2>LOGO</h2>
@@ -13,10 +13,16 @@ export let Logo = () => (
         <div  className= { Togglemenu ? "navbar navlist mobileactive" : "navlist"}
          >
           <ul>
+            <Link to="/">
             <li>HOME</li>
+            </Link>
+            <Link to="/about">
             <li>ABOUT</li>
-            <li>ORDER</li>
+            </Link>
+            <Link to="/contact">
             <li>CONTACT</li>
+            </Link>
+            <li>ORDER</li>
           </ul>
         </div>
         <div className='menubtn'>
