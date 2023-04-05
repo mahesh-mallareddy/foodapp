@@ -52,6 +52,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1500px;
+margin: auto;
 }
 
 .foodcards {
@@ -144,4 +146,13 @@ cursor: pointer;
     .navbar>.menubtn {
         display: block;
     }
+}
+.shimmer-grid{
+    margin-top: 1em;
+}
+.cards-shimmer{
+    width: 380px;
+    height: 400px;
+    margin: 15px 10px;
+    background-color: rgba(146, 155, 163, 0.648);
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import Shimmer from "./shimmer";
 export default Restocards = () => {
 
     const [restaurantlist, setrestaurantlist] = useState([]);
@@ -15,7 +15,7 @@ export default Restocards = () => {
         getrestolists()
     }, []);
 
-    return (
+    return (restaurantlist?.length === 0) ? ( <Shimmer/> ) :  (
 
             <div className="cards-grid">
             {

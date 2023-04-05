@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { IMG_CDN } from "../constants";
-
+import Shimmer from "./shimmer";
 export function Bodycards({ cloudinaryImageId, name, costForTwoString, slaString, area }) {
 
   return (
@@ -16,7 +16,7 @@ export function Bodycards({ cloudinaryImageId, name, costForTwoString, slaString
   );
 };
 
-let filter = (restaurant, getsearch) => {
+let filter = ( restaurant, getsearch ) => {
   let setfilter = restaurant.filter((restaurant) => restaurant.data.name.toLowerCase().includes(getsearch.toLowerCase())
   );
   return setfilter
@@ -40,10 +40,7 @@ const [allrestaurant,setallrestaurant] = useState([])
 
   if(!allrestaurant) return null;
 
-if(filterrestaurant.length === 0) 
-return <h2>No restaurant are found</h2>;
-  
-  return ( 
+  return (filterrestaurant?.length === 0) ? ( <Shimmer/> ) : ( 
     <>
       <div className="sreachinput">
         <input className="search" type="text" placeholder="Search your food"
@@ -57,7 +54,7 @@ return <h2>No restaurant are found</h2>;
         }}>search</button>
       </div>
 
-      <div className="cards-grid">
+      <div className="cards-grid ">
         {
           filterrestaurant.map((resto) => {
             return <Bodycards {...resto.data} key={resto.data.id} />
