@@ -10,7 +10,7 @@ export function Bodycards({ cloudinaryImageId, name, costForTwoString, slaString
         <h4>{name}</h4>
         <p>{costForTwoString}<span>{"Delivary time: " + slaString}</span></p>
         <p>{area}</p>
-        <input type="button" value="Order now"></input>
+        <input type="button" value="View Menu"></input>
       </div>
     </div>
   );
@@ -40,7 +40,7 @@ const [allrestaurant,setallrestaurant] = useState([])
 
   if(!allrestaurant) return null;
 
-  return (filterrestaurant?.length === 0) ? ( <Shimmer/> ) : ( 
+  return (allrestaurant?.length === 0) ? ( <Shimmer/> ) : ( 
     <>
       <div className="sreachinput">
         <input className="search" type="text" placeholder="Search your food"
@@ -51,6 +51,7 @@ const [allrestaurant,setallrestaurant] = useState([])
         />
         <button onClick={() => {
           setfilterrestaurant(filter(allrestaurant, getsearch)); 
+          setsearch("")
         }}>search</button>
       </div>
 
@@ -59,7 +60,7 @@ const [allrestaurant,setallrestaurant] = useState([])
           filterrestaurant.map((resto) => {
             return <Bodycards {...resto.data} key={resto.data.id} />
           })
-        }
+        };
       </div>
     </>
   );
