@@ -7,10 +7,29 @@ export default Restomenu = () => {
 
     const [restomenulist, setrestomenulist] = useState([])
 
+
+
     async function getrestomennulist() {
-        let fetchurl = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.5366218&lng=78.4844811&restaurantId=667695")
+        let fetchurl = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.5161534&lng=78.4496168&restaurantId=42085&submitAction=ENTER")
         let restodata = await fetchurl.json()
-        console.log(restodata?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards[2].card.card.itemCards )
+        let data = restodata?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards
+
+        const getinfo = data.map((menudata) => {
+            return menudata.card.card
+        });
+
+
+        let iteminfo = getinfo.map((itemcards) => {
+            return (itemcards?.title === "Recommended" ) ?  itemcards.itemCards : null ;
+            
+        }
+           
+        );
+
+        console.log(getinfo)
+        console.log(iteminfo)
+
+       
     };
 
     useEffect(() => {
