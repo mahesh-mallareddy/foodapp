@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider, Outlet, Route } from "react-router
 import About from './components/about';
 import Contact from './components/contact';
 import RestoFetchdata from './components/RestoFetchdata';
+import  Restodata  from './components/Restomenu'; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -40,6 +41,10 @@ let Approuter = createBrowserRouter([
       {
         path: "/order",
         element: <Restocards />,
+      },
+      {
+        path: "/testrestodata",
+        element: <Restodata />,
       },
       {
         path: "/restomenu/:paramsid",

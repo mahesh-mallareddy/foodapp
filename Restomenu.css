@@ -1,0 +1,32 @@
+.resto-main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.resto-main hr{
+    color: #e3f2ff ;
+    
+}
+.resto-main .restomenu-head{
+    text-align: center;
+}
+/* .resto-main .restomenu .restomenu-img{
+    position: sticky    ;
+} */
+.resto-main .restomenu .restomenu-img img {
+    height: 9em;
+    width: 12em;
+}
+
+.resto-main .restomenu {
+    display: flex;
+    margin: 1em 0;
+    justify-content: space-between;
+}
+
+.resto-main .restomenu .restomenu-content {
+    max-width: 49em;
+    margin: 1em;
+}
+.resto-main .restomenu .restomenu-content .discription{
+    color: #4d5053 ;
+}
