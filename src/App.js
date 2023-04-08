@@ -42,10 +42,10 @@ let Approuter = createBrowserRouter([
         path: "/order",
         element: <Restocards />,
       },
-      {
-        path: "/testrestodata",
-        element: <Restodata />,
-      },
+      // {
+      //   path: "/testrestodata",
+      //   element: <Restodata />,
+      // },
       {
         path: "/restomenu/:paramsid",
         element: <RestoFetchdata />,

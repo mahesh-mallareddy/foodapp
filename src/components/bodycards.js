@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { IMG_CDN } from "../constants";
 import Shimmer from "./shimmer";
+import { Link } from "react-router-dom";
 export function Bodycards({ cloudinaryImageId, name, costForTwoString, slaString, area }) {
 
   return (
@@ -16,14 +17,14 @@ export function Bodycards({ cloudinaryImageId, name, costForTwoString, slaString
   );
 };
 
-let filter = ( restaurant, getsearch ) => {
+let filter = (restaurant, getsearch) => {
   let setfilter = restaurant.filter((restaurant) => restaurant.data.name.toLowerCase().includes(getsearch.toLowerCase())
   );
   return setfilter
 }
 
 export const Cards = () => {
-const [allrestaurant,setallrestaurant] = useState([])
+  const [allrestaurant, setallrestaurant] = useState([])
   const [filterrestaurant, setfilterrestaurant] = useState([]);
   const [getsearch, setsearch] = useState()
 
@@ -38,9 +39,9 @@ const [allrestaurant,setallrestaurant] = useState([])
     getrestolist()
   }, []);
 
-  if(!allrestaurant) return null;
+  if (!allrestaurant) return null;
 
-  return (allrestaurant?.length === 0) ? ( <Shimmer/> ) : ( 
+  return (allrestaurant?.length === 0) ? (<Shimmer />) : (
     <>
       <div className="sreachinput">
         <input className="search" type="text" placeholder="Search your food"
@@ -50,7 +51,7 @@ const [allrestaurant,setallrestaurant] = useState([])
           }}
         />
         <button onClick={() => {
-          setfilterrestaurant(filter(allrestaurant, getsearch)); 
+          setfilterrestaurant(filter(allrestaurant, getsearch));
           setsearch("")
         }}>search</button>
       </div>
@@ -58,7 +59,9 @@ const [allrestaurant,setallrestaurant] = useState([])
       <div className="cards-grid ">
         {
           filterrestaurant.map((resto) => {
-            return <Bodycards {...resto.data} key={resto.data.id} />
+            return (<Link to={"/restomenu/" + resto.data.id} key={resto.data.id}>
+              <Bodycards {...resto.data} />
+            </Link>)
           })
         };
       </div>

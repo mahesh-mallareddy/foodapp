@@ -10,7 +10,8 @@ export default RestoFetchdata = () => {
 
 
     async function getrestomennulist() {
-        let fetchurl = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.5161534&lng=78.4496168&restaurantId="+{paramsid})
+        let fetchurl = await fetch
+        ("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.5161534&lng=78.4496168&restaurantId="+paramsid)
         let restodata = await fetchurl.json()
         let data = restodata?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards
 
@@ -40,7 +41,7 @@ export default RestoFetchdata = () => {
     useEffect(() => {
         getrestomennulist()
     }, []);
-
+    
     return (
         <div className="resto-main">
             <div className="restomenu-head">
@@ -53,7 +54,7 @@ export default RestoFetchdata = () => {
                         <div className="restomenu">
                             <div className="restomenu-content">
                                 <h4>{finaldata.card.info.name}</h4>
-                                <p>&#8377;{finaldata.card.info.price / 100}</p>
+                                <p>&#8377;{finaldata.card.info.cost/ 100}</p>
                                 <p className="discription">{finaldata.card.info.description}</p>
                             </div>
                             <div className="restomenu-img">
@@ -66,4 +67,5 @@ export default RestoFetchdata = () => {
         </div>
     )
 };
+
 
