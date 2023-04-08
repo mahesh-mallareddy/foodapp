@@ -33,3 +33,26 @@
 .resto-main .restomenu .restomenu-content .discription{
     color: #4d5053 ;
 }
+.restoinfo{
+    height: 15em;
+    width: 1500px;
+    background-color: rgb(222, 224, 225);
+   margin: auto;
+   display: flex;
+   justify-content: space-around;
+}
+.restoinfo .restoinfo-content{
+    margin: 1em;
+    color: #383a3c;
+}
+.restoinfo .restoinfo-content p{
+    margin: 10px;
+}
+.restoinfo .restoinfo-img{
+margin: 1em;
+}
+.restoinfo .restoinfo-img img{
+    height: 11em;
+    width: 18em;
+    border-radius: 10px;
+}

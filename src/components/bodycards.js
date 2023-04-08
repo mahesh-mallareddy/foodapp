@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { IMG_CDN } from "../constants";
-import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
+import Shimmer from "./shimmer";
+
 export function Bodycards({ cloudinaryImageId, name, costForTwoString, slaString, area }) {
 
   return (
@@ -59,9 +60,12 @@ export const Cards = () => {
       <div className="cards-grid ">
         {
           filterrestaurant.map((resto) => {
-            return (<Link to={"/restomenu/" + resto.data.id} key={resto.data.id}>
-              <Bodycards {...resto.data} />
-            </Link>)
+            console.log(resto.data.id)
+            return (
+              <Link to={"/restomenu/" + resto.data.id} key={resto.data.id}>
+                <Bodycards {...resto.data} />
+              </Link>
+            )
           })
         };
       </div>
