@@ -6,7 +6,7 @@ import Nav from './components/navbar';
 import { createBrowserRouter, RouterProvider, Outlet, Route } from "react-router-dom"
 import About from './components/about';
 import Contact from './components/contact';
-import Restomenu from './components/Restomenu';
+import RestoFetchdata from './components/RestoFetchdata';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -43,7 +43,7 @@ let Approuter = createBrowserRouter([
       },
       {
         path: "/restomenu/:paramsid",
-        element: <Restomenu />,
+        element: <RestoFetchdata />,
       },
 
     ],
